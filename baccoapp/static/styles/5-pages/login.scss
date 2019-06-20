@@ -1,14 +1,20 @@
+@import '../1-abstracts/variables';
+
 .login{
     margin:auto;
     width:60%;
     padding-left:4%;
     img{
+
+    }
+    form{
         .uname{
             label{
-
+                display:none;
             }
             #id_username{
-
+                border: 2px solid $green;
+                border-radius:3%;
             }
             img{
 
@@ -16,13 +22,11 @@
         }
         .pw{
             label{
-
+                display:none;
             }
             #id_password{
-
-            }
-            img{
-
+                border:2px solid $red;
+                border-radius: 3%;
             }
         }
         .buttons{

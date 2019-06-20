@@ -10,8 +10,11 @@
 
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
+from django.db.models import Q
 from .models import Sandwich
 from .forms import SandwichForm
+from .models import Ingredient
+# from .forms import IngredientForm
 
 # Create your views here.
 class SandwichListView(ListView):
@@ -33,6 +36,24 @@ class SandwichDetailView(DetailView):
         context['sandwich_list'] = Sandwich.objects.all()
         return context
 
+class SearchResultsView(ListView):
+    model = Sandwich
+    template_name = 'search_results.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        return Sandwich.objects.filter(
+            Q(name__icontains = query)
+        )
+        # Q(name__icontains = query) |
+        # Q(bread__icontains = query) |
+        # Q(base__icontains = query) |
+        # Q(cheese__icontains = query) |
+        # Q(vegetable__icontains = query) |
+        # Q(condiment__icontains = query) |
+        # Q(price__icontains = query) |
+        # Q(upvotes__icontains = query) |
+        # Q(downvotes__icontains = query)
 
 def add_sandwich(request):
     if request.method == 'POST':
@@ -43,4 +64,14 @@ def add_sandwich(request):
         form = SandwichForm()
 
     # return render(request, 'sandwiches/sandwich_add.html', {'form': form})
-    return render(request, '../templates/mysandwich.html', {'form': form})
+    return render(request, 'mysandwich/mysandwich.html', {'form': form})
+
+
+class IngredientsListView(ListView):
+    model = Ingredient
+    context_object_name = "all_ingredients"
+
+    def get_context_data(self, **kwargs):
+        context = super(IngredientsListView, self).get_context_data(**kwargs)
+        context['ingredients_list'] = Ingredient.objects.all()
+        return context
