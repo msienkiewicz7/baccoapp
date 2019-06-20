@@ -1,25 +1,33 @@
 <!-- templates/registration/login.html -->
+{% extends 'base.html' %}
 
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="/static/login.css">
+<link rel="stylesheet" href="/static/login2.css">
 
 <div class="login">
-  <img src="/static/images/bread.png">
-  <form method="post"> {% csrf_token %}
-    <p>
-      <label for="id_username">Username:</label>
-      <input type="text" name="username" autofocus="" required="" placeholder="Username" id="id_username">
-    </p>
-    <p>
-      <label for="id_password">Password:</label>
-      <input type="password" name="password" required="" placeholder="Password" id="id_password">
-    </p>
-    <button type="submit" id="submit_login">Login</button>
-    <button type="submit" id="submit_signup">Sign up</button>
-  </form>
+    <img src="/static/images/bread.png">
+    <form method="post">
+        {% csrf_token %}
+        <p class="uname">
+            <label for="id_username">Username:</label>
+            <input type="text" name="username" autofocus="" required="" placeholder="Username" id="id_username">
+            <img src="/static/images/salad.png">
+        </p>
+        <p class="pw">
+            <label for="id_password">Password:</label>
+            <input type="password" name="password" required="" placeholder="Password" id="id_password">
+            <img id="tomato" src="/static/images/tomato.png">
 
-  <img src="/static/images/bread2.png">
+        </p>
+        <div class="buttons">
+            <button type="submit" id="submit_login">Login</button>
+            <button type="submit" id="submit_signup">Sign up</button>
+        </div>
+
+    </form>
+
+    <img src="/static/images/bread2.png">
 </div>
 {% endblock %}
