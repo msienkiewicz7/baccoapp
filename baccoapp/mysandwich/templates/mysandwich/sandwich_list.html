@@ -7,28 +7,22 @@
     <tr class="sandwich_header">
         <th>ID</th>
         <th>Name</th>
-        <th>Bread</th>
-        <th>Base</th>
-        <th>Cheese</th>
-        <th>Vegetable</th>
-        <th>Condiment</th>
+        <th>Ingredients</th>
+        <th>Published</th>
         <th>Price</th>
-        <th>Upvotes</th>
-        <th>Downvotes</th>
     </tr>
 
     {% for sandwich in all_sandwiches %}
     <tr class="sandwich_row">
         <td><a href="show/{{ sandwich.id }}">{{ sandwich.id }}</a></td>
         <td>{{ sandwich.name }}</td>
-        <td>{{ sandwich.bread }}</td>
-        <td>{{ sandwich.base }}</td>
-        <td>{{ sandwich.cheese }}</td>
-        <td>{{ sandwich.vegetable}}</td>
-        <td>{{ sandwich.condiment}}</td>
-        <td>{{ sandwich.price}}</td>
-        <td>{{ sandwich.upvotes}}</td>
-        <td>{{ sandwich.downvotes}}</td>
+        <td>
+          {% for ingredient in all_ingredients %}
+            {{ ingredient.name }},
+          {% endfor %}
+        </td>
+        <td>{{ sandwich.pub_date }}</td>
+        <td>{{ sandwich.price }}</td>
     </tr>
     {% endfor %}
 </table>
