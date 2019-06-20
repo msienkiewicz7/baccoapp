@@ -12,6 +12,8 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Sandwich
 from .forms import SandwichForm
+from .models import Ingredient
+# from .forms import IngredientForm
 
 # Create your views here.
 class SandwichListView(ListView):
@@ -44,3 +46,13 @@ def add_sandwich(request):
 
     # return render(request, 'sandwiches/sandwich_add.html', {'form': form})
     return render(request, '../templates/mysandwich.html', {'form': form})
+
+
+class IngredientsListView(ListView):
+    model = Ingredient
+    context_object_name = "all_ingredients"
+
+    def get_context_data(self, **kwargs):
+        context = super(IngredientsListView, self).get_context_data(**kwargs)
+        context['ingredients_list'] = Ingredient.objects.all()
+        return context
