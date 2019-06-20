@@ -9,8 +9,8 @@
 <header>
 {% if user.is_authenticated %}
   Hi {{ user.username }}!
-  <p><a href="sandwiches/add">Create new sandwich!</a></p>
-  <p><a href="sandwiches/show">View sandwiches</a></p>
+  <!-- <p><a href="sandwiches/add">Create new sandwich!</a></p> -->
+  <p><a href="/mysandwich/show">View sandwiches</a></p>
   <p><a href="{% url 'logout' %}">logout</a></p>
   {% else %}
   <p>You are not logged in</p>
