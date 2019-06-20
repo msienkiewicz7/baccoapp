@@ -1,0 +1,10 @@
+* {
+  font-family: sans-serif;
+  font-size: 16px;
+  background: #23272a;
+  color: white;
+}
+
+label {
+  width: 100%;
+}

@@ -5,16 +5,40 @@
 <head>
   <meta charset="utf-8">
   <link rel="shortcut icon" href="{% static 'favicon.ico' %}"/>
+  <link rel="stylesheet" href="/static/base.css">
   <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
 </head>
+
+<header>
+</header>
+
+<nav>
+  {% if user.is_authenticated %}
+  <ul>
+    <li> <p>BACCO.</p> </li>
+    <li> <p>Hi {{ user.username }}!</p> </li>
+    <li><a href="/mysandwich">Create new sandwich!</a></li>
+    <li><a href="/mysandwich/show">View sandwiches</a></li>
+    <li><a href="{% url 'logout' %}">Logout</a></li>
+    <li style="float: right">
+      <!-- <p> -->
+        <form action="{% url 'search_results' %}" method="get" style="float:right">
+          <input name="q" type="text" placeholder="enter name">
+        </form>
+      <!-- </p> -->
+    </li>
+  </ul>
+
+  {% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Login</a>
+  {% endif %}
+</nav>
 <body>
   <main>
     {% block content %}
     {% endblock %}
-    <h2>Search</h2>
-    <form action="{% url 'search_results' %}" method="get">
-      <input name="q" type="text" placeholder="enter name">
-    </form>
+
   </main>
 </body>
 </html>
