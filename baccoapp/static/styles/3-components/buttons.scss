@@ -1,0 +1,15 @@
+@import '../1-abstracts/variables';
+@import '../1-abstracts/mixins';
+
+.login{
+    form{
+        .buttons{ 
+            #submit_login{
+                @include submit;
+            }
+            #submit_signup{
+                @include submit;
+            }
+        }
+    }
+}
