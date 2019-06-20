@@ -1,0 +1,31 @@
+{
+    "version": 3,
+    "mappings": "AKAA,AAAA,CAAC,CAAC;EACE,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;CACzB",
+    "sources": [
+        "main.scss",
+        "1-abstracts/variables.scss",
+        "1-abstracts/functions.scss",
+        "1-abstracts/mixins.scss",
+        "1-abstracts/placeholders.scss",
+        "2-base/reset.scss",
+        "2-base/typography.scss",
+        "3-components/buttons.scss",
+        "3-components/carousel.scss",
+        "3-components/cover.scss",
+        "4-layout/navigation.scss",
+        "3-components/dropdown.scss",
+        "4-layout/header.scss",
+        "4-layout/gallery.scss",
+        "4-layout/grid.scss",
+        "4-layout/footer.scss",
+        "4-layout/sidebar.scss",
+        "4-layout/forms.scss",
+        "5-pages/home.scss",
+        "6-themes/theme.scss",
+        "6-themes/admin.scss",
+        "7-vendors/bootstrap.scss",
+        "7-vendors/jquery-ui.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
