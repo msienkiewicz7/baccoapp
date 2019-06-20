@@ -1,0 +1,27 @@
+@import '../1-abstracts/variables';
+
+@mixin bgImage{
+    width:50%;
+    position: absolute;
+    @include borderRadius;
+}
+
+@mixin submit{
+    color:white;
+    width:45%;
+    text-align: center;
+    font-size:1.5em;
+    padding:14px 16px;
+    @include borderRadius;
+    cursor:pointer;
+    border:none;
+    text-transform: uppercase;
+    background: $green;
+    &:hover{
+        background:darken($green, 10%);
+    }
+}
+
+@mixin borderRadius{
+    border-radius:3%;
+}
