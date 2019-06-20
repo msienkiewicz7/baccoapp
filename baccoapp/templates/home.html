@@ -4,23 +4,9 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="/static/home.css">
+<!-- <link rel="stylesheet" href="/static/home.css"> -->
 
-<header>
-  <h1> BACCO. </h1>
-</header>
 
-<nav>
-  {% if user.is_authenticated %}
-  <h2>Hi {{ user.username }}!</h2>
-  <a href="mysandwich">Create new sandwich!</a>
-  <a href="mysandwich/show">View sandwiches</a>
-  <a href="{% url 'logout' %}">logout</a>
-  {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
-  {% endif %}
-</nav>
 
 <!-- <div id="main-container">
 

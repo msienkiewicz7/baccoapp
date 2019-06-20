@@ -1,1 +1,32 @@
-/* No CSS *//*# sourceMappingURL=forms.css.map */
+.login form {
+  width: 100%;
+}
+
+.login form input {
+  width: 90%;
+  margin: 2.5% 0 2.5% 0;
+  padding: 14px 16px;
+}
+
+.login form .uname label {
+  display: none;
+}
+
+.login form .uname #id_username {
+  width: 50%;
+  position: absolute;
+  border-radius: 3%;
+  border: 2px solid green;
+}
+
+.login form .pw label {
+  display: none;
+}
+
+.login form .pw #id_password {
+  width: 50%;
+  position: absolute;
+  border-radius: 3%;
+  border: 2px solid red;
+}
+/*# sourceMappingURL=forms.css.map */

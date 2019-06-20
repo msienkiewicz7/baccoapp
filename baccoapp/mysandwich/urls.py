@@ -13,5 +13,4 @@ urlpatterns = [
     path('show', SandwichListView.as_view(), name='all-sandwiches'),
     path('show/<int:pk>', SandwichDetailView.as_view(), name='sandwich'),
     path('search/', SearchResultsView.as_view(), name='search_results'),
-
 ]

@@ -1,7 +1,88 @@
+/*reset*/
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+/*typography*/
+.login form input {
+  font-size: 1.5em;
+}
+
+/*buttons*/
+.login form .buttons #submit_login {
+  color: white;
+  width: 45%;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 14px 16px;
+  border-radius: 3%;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  background: green;
+}
+
+.login form .buttons #submit_login:hover {
+  background: #004d00;
+}
+
+.login form .buttons #submit_signup {
+  color: white;
+  width: 45%;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 14px 16px;
+  border-radius: 3%;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  background: green;
+}
+
+.login form .buttons #submit_signup:hover {
+  background: #004d00;
+}
+
+/*forms*/
+.login form {
+  width: 100%;
+}
+
+.login form input {
+  width: 90%;
+  margin: 2.5% 0 2.5% 0;
+  padding: 14px 16px;
+}
+
+.login form .uname label {
+  display: none;
+}
+
+.login form .uname #id_username {
+  width: 50%;
+  position: absolute;
+  border-radius: 3%;
+  border: 2px solid green;
+}
+
+.login form .pw label {
+  display: none;
+}
+
+.login form .pw #id_password {
+  width: 50%;
+  position: absolute;
+  border-radius: 3%;
+  border: 2px solid red;
+}
+
+/*login*/
+.login {
+  margin: auto;
+  width: 60%;
+  padding-left: 4%;
 }
 /*# sourceMappingURL=main.css.map */
