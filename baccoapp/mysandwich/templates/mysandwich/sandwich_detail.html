@@ -4,11 +4,17 @@
 
 <h1>Sandwich Detail</h1>
 <table class="sandwich">
-  <tr><td>ID:</td>        <td>{{ sandwich.id }}</td></tr>
-  <tr><td>Name:</td>      <td>{{ sandwich.name }}</td></tr>
-  <tr><td>Ingredients:</td>     <td>{{ sandwich.ingredients }}</td></tr>
-  <tr><td>Published:</td>      <td>{{ sandwich.pub_date }}</td></tr>
-  <tr><td>Price:</td>    <td>{{ sandwich.price }}</td></tr>
+  <tr><td>ID:</td>           <td>{{ sandwich.id }}</td></tr>
+  <tr><td>Name:</td>         <td>{{ sandwich.name }}</td></tr>
+  <tr><td>Ingredients:</td>  <td>
+                                {% for ingredient in sandwich.ingredients.all %}
+                                  {% if ingredient.img_small %}
+                                    <img src="http://localhost:8000/{{ ingredient.img_small }}" alt="">
+                                  {% endif %}
+                                {% endfor %}
+                            </td></tr>
+  <tr><td>Published:</td>    <td>{{ sandwich.pub_date }}</td></tr>
+  <tr><td>Price:</td>        <td>{{ sandwich.price }}</td></tr>
 </table>
 <p><a href="../show">Back to sandwich list</a></p>
 {% endblock content %}
