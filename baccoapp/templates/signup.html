@@ -1,0 +1,21 @@
+<!-- templates/signup.html -->
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/signup.css">
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+<div class="form">
+  <h2>Registrieren</h2>
+  <form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Sign up</button>
+      <p class="register">Du hast schon einen Account?<a href="http://127.0.0.1:8000/accounts/login/"> Jetzt anmelden!</a></p>
+  </form>
+</div>
+<img src="/static/burger.png">
+{% endblock %}

@@ -1,0 +1,19 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+<!-- <link rel="stylesheet" href="/static/style.css"> -->
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+    <p><a href="mysandwich/">Create new sandwich!</a></p>
+    <p><a href="mysandwich/show">View sandwiches</a></p>
+    <p><a href="{% url 'logout' %}">logout</a></p>
+  {% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">login</a>
+  {% endif %}
+
+{% endblock %}

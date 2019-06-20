@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: Arial;
+}
+
+html {
+  padding: 1em;
+  background-color: green;
+}
+
+header {
+  height: 2em;
+}
+
+header * {
+  display: inline-block;
+}
+
+header a {
+  float: left;
+}
+
+header h1 {
+  text-align: center;
+}
+
+#main-container {
+  width: 100%;
+  height: calc(100vh - 4em);
+}
+
+#sandwich, #sandwich div {
+  float: left;
+  background-color: transparent;
+  width: calc(100% / 3);
+}
+
+#controls {
+  float: left;
+  width: calc(100% * (2 / 3));
+  height: 100%;
+  border-radius: 0.25em;
+}
+
+.column {
+  float: left;
+  width: calc(100% / 2);
+  height: 100%;
+  display: block;
+  background-color: lightGreen;
+}
+
+.column p {
+  text-align: center;
+}
+
+.content {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  overflow-x: scroll;
+}

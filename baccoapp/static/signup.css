@@ -1,0 +1,69 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+.form{
+    margin-top:2%;
+    float:left;
+    width:50%;
+}
+
+.form>h2,.form>form{
+    width:100%;
+}
+
+li{
+    margin-left:2%;
+}
+
+h2{
+    margin-left: 2%;
+    padding:2%;
+    margin-top:5%;
+    font-family:Lora;
+    font-size:3em;
+}
+
+
+
+form {
+  float: left;
+  margin-left: 2%;
+  padding: 2%;
+  width: 50%;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #5B5F97;
+}
+
+button {
+  padding: 10px 12px;
+  background: #008938;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  width: 100%;
+  margin-top: 2%;
+    margin-bottom:2%;
+  cursor: pointer;
+}
+
+button:hover{
+    background:black;
+}
+
+img {
+    margin-top: 2%;
+    width: 40%;
+    margin-right: 2%;
+    height: 90vh;
+    object-fit: contain;
+    float: right;
+}

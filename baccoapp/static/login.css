@@ -1,0 +1,72 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.login{
+    margin:auto;
+    width:40%;
+    padding-top:4%;
+
+}
+
+
+label{
+    display: none;
+}
+
+input{
+    font-size:1.5em;
+    width:90%;
+    margin: 2% 0 2% 0;
+    padding:14px 16px;
+}
+
+form>input{
+    width:100%;
+}
+
+img{
+    padding:2%;
+    width:90%;
+}
+
+#id_username{
+    border: 2px solid green;
+    border-radius: 3%;
+}
+
+#id_password{
+    border: 2px solid red;
+    border-radius: 3%;
+}
+
+button{
+    flex-flow: row;
+    width:45%;
+    text-align: center;
+    font-size:1.5em;
+    padding:14px 16px;
+    border-radius: 3%;
+    cursor:pointer;
+    border:none;
+    text-transform: uppercase;
+    border:2px solid green;
+    z-index: 1;
+}
+
+#submit_login{
+    background:green;
+    color:white;
+}
+
+#submit_signup{
+    background:white;
+    color:green;
+}
+
+#tomato{
+    position: absolute;
+    z-index: 2;
+}
