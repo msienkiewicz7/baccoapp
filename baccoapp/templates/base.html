@@ -15,17 +15,15 @@
 <nav>
   {% if user.is_authenticated %}
   <ul>
-    <li> <p>BACCO.</p> </li>
+    <li onclick="histoy.go(0)"> <h2>BACCO.</h2> </li>
     <li> <p>Hi {{ user.username }}!</p> </li>
     <li><a href="/mysandwich">Create new sandwich!</a></li>
     <li><a href="/mysandwich/show">View sandwiches</a></li>
     <li><a href="{% url 'logout' %}">Logout</a></li>
     <li style="float: right">
-      <!-- <p> -->
         <form action="{% url 'search_results' %}" method="get" style="float:right">
-          <input name="q" type="text" placeholder="enter name">
+          <input name="q" type="text" placeholder="search sandwich">
         </form>
-      <!-- </p> -->
     </li>
   </ul>
 
