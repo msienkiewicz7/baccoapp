@@ -4,13 +4,46 @@
 {% block title %}Add Sandwich{% endblock title %}
 {% block content %}
 <!-- <link rel="stylesheet" href="/static/mysandwich.css"> -->
-
-<h1>New Sandwich</h1>
+<link rel="stylesheet" href="/static/styles/main.css">
+<div class="create">
+    <h1>New Sandwich</h1>
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-    <button type="submit">Save</button>
+        <div class="name-wrapper">
+            <p class="name">
+                <label for="id_name">Name:</label> 
+                <input type="text" name="name" maxlength="255" required="" id="id_name">
+            </p>
+        </div>
+        <p>
+            <label for="id_ingredients">Ingredients:</label> 
+            <select name="ingredients" required="" id="id_ingredients" multiple="">
+                <option value="1">9-Grain Wheat</option>
+              
+                <option value="2">Cheddar</option>
+              
+                <option value="3">Bacon</option>
+              
+                <option value="4">Guacamole</option>
+              
+                <option value="5">Black Olives</option>
+              
+                <option value="6">Chipotle Southwest</option>
+              
+            </select>
+        </p>
+        <p>
+            <label for="id_pub_date">Pub date:</label> 
+            <input type="text" name="pub_date" value="2019-06-20 23:40:56" id="id_pub_date">
+        </p>
+        <p>
+            <label for="id_price">Price:</label> 
+            <input type="number" name="price" value="0" step="0.01" required="" id="id_price">
+        </p>
+        <button type="submit">Save</button>
     </form>
     <p><a href="../">Cancel</a></p>
 
 {% endblock content %}
+</div>
+
