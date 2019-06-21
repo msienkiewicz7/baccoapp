@@ -4,9 +4,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="shortcut icon" href="{% static 'favicon.ico' %}"/>
+  <link rel="shortcut icon" href="/static/favicon.ico"/>
   <link rel="stylesheet" href="/static/base.css">
-  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+  <title>{% block title %}Bacco{% endblock %}</title>
 </head>
 
 <header>
@@ -15,7 +15,7 @@
 <nav>
   {% if user.is_authenticated %}
   <ul>
-    <li onclick="histoy.go(0)"> <h2>BACCO.</h2> </li>
+    <li> <a class="title" href="/"><h1>BACCO.</h1></a> </li>
     <li> <p>Hi {{ user.username }}!</p> </li>
     <li><a href="/mysandwich">Create new sandwich!</a></li>
     <li><a href="/mysandwich/show">View sandwiches</a></li>
@@ -27,10 +27,6 @@
     </li>
   </ul>
 
-  {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Login</a>
-  {% endif %}
 </nav>
 <body>
   <main>
@@ -39,4 +35,10 @@
 
   </main>
 </body>
+
+{% else %}
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">Login</a>
+{% endif %}
+
 </html>

@@ -1,11 +1,10 @@
 <!-- templates/home.html -->
 {% extends 'base.html' %}
 
-{% block title %}Add Sandwich{% endblock title %}
 {% block content %}
 <!-- <link rel="stylesheet" href="/static/mysandwich.css"> -->
 
-<h1>New Sandwich</h1>
+<h2>New Sandwich</h2>
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}

@@ -3,23 +3,24 @@
 
 {% block content %}
 
-<h1>Search Results</h1>
+<div class="sandwich-container">
+<h2>Search Results</h2>
 
-<ul>
+<table>
   {% for sandwich in object_list %}
-    <li>
-      <a href="http://localhost:8000/mysandwich/show/{{ sandwich.id }}">{{ sandwich.id }}</a>
-      {{ sandwich.name }},
-
+    <tr>
+      <td><a href="http://localhost:8000/mysandwich/show/{{ sandwich.id }}">{{ sandwich.id }}</a></td>
+      <td>{{ sandwich.name }}</td>
+      <td>
         {% for ingredient in sandwich.ingredients.all %}
           {{ ingredient.name }},
         {% endfor %}
-
-      {{ sandwich.pub_date }},
-      {{ sandwich.price }}
-    </li>
+      </td>
+      <td>{{ sandwich.pub_date }}</td>
+      <td>{{ sandwich.price }}</td>
+    </tr>
   {% endfor %}
-</ul>
+</table>
 <p><a href="/">Back to Homepage</a></p>
-
+</div>
 {% endblock content %}
