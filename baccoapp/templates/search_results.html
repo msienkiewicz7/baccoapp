@@ -1,14 +1,14 @@
 <!-- templates/search_results.html -->
 {% extends 'base.html' %}
 
-{% block title %}Search Results{% endblock title %}
 {% block content %}
 
-<!-- <h1>Search Results</h1> -->
+<h1>Search Results</h1>
 
 <ul>
   {% for sandwich in object_list %}
     <li>
+      <a href="http://localhost:8000/mysandwich/show/{{ sandwich.id }}">{{ sandwich.id }}</a>
       {{ sandwich.name }},
 
         {% for ingredient in sandwich.ingredients.all %}
