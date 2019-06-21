@@ -4,10 +4,10 @@ from datetime import timedelta
 
 
 def small_directory_path(instance, filename):
-    return 'static/images/ingredients/small/' + instance.name.lower() + '_small.' + filename.split(".")[1]
+    return 'baccoapp/static/images/ingredients/small/' + instance.name.lower() + '_small.' + filename.split(".")[1]
 
 def large_directory_path(instance, filename):
-    return 'static/images/ingredients/large/' + instance.name.lower() + '_large.' + filename.split(".")[1]
+    return 'baccoapp/static/images/ingredients/large/' + instance.name.lower() + '_large.' + filename.split(".")[1]
 
 # Create your models here.
 class Ingredient(models.Model):
