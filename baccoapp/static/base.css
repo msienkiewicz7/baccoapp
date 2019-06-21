@@ -40,34 +40,47 @@ nav ul {
   background-color: #1DB954;
 }
 
-li {
+nav li {
   float: left;
   text-align: center;
   /* padding: 14px 16px; */
 }
 
-li a {
+nav li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 24px 16px;
   text-decoration: none;
 }
-li p, li form {
+nav li p, nav li form {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 20px 16px;
   text-decoration: none;
+}
+nav li form input {
+  padding-left: 10px;
+  color: black;
+}
+nav li h2:first-of-type {
+  padding: 15px 10px;
+  font-size: 2em;
+}
+nav li p:first-of-type {
+  font-family: cursive;
+  padding: 20px 16px;
+  /* font-size: 1em; */
 }
 /* nav > a {
   padding:.5em;
   text-decoration: none;
 } */
-nav > h2 {
+/* nav > h2 {
   display: inline-block;
-}
+} */
 
-a:hover {
+nav a:hover {
   background: grey;
 }
