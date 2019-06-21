@@ -27,6 +27,20 @@
         <th>Price</th>
     </tr> -->
 
+    {% for sandwich in all_sandwiches %}
+    <tr class="sandwich_row">
+        <td><a href="show/{{ sandwich.id }}">{{ sandwich.id }}</a></td>
+        <td>{{ sandwich.name }}</td>
+        <td>
+          {% for ingredient in sandwich.ingredients.all %}
+            {{ ingredient.name }},
+          {% endfor %}
+        </td>
+        <td>{{ sandwich.pub_date }}</td>
+        <td>{{ sandwich.price }}€</td>
+    </tr>
+    {% endfor %}
+</table>
 
 <p><a href="../">Cancel</a></p>
 

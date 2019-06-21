@@ -31,6 +31,11 @@ nav {
   justify-content: center;
   align-items: center; */
 }
+
+input, option, button {
+  color:black;
+}
+
 nav ul {
   list-style-type: none;
   margin: 0;
