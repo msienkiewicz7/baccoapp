@@ -10,7 +10,11 @@
   {% for sandwich in object_list %}
     <li>
       {{ sandwich.name }},
-      {{ sandwich.ingredients }},
+
+        {% for ingredient in sandwich.ingredients.all %}
+          {{ ingredient.name }},
+        {% endfor %}
+
       {{ sandwich.pub_date }},
       {{ sandwich.price }}
     </li>
