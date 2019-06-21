@@ -1,12 +1,12 @@
 <!-- templates/home.html -->
 {% extends 'base.html' %}
 
-{% block title %}Add Sandwich{% endblock title %}
 {% block content %}
 <!-- <link rel="stylesheet" href="/static/mysandwich.css"> -->
 <link rel="stylesheet" href="/static/styles/main.css">
 <div class="create">
     <h1>New Sandwich</h1>
+
     <form method="POST">
         {% csrf_token %}
         <div class="name-wrapper">

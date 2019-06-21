@@ -1,73 +1,29 @@
 <!-- templates/home.html -->
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
-
 {% block content %}
-<!-- <link rel="stylesheet" href="/static/home.css"> -->
+<link rel="stylesheet" href="/static/home.css">
 
-
-
-<!-- <div id="main-container">
-
-  <div id="sandwich">
-    <p>sandwich preview</p>
-    <div class="content">
-
-    </div>
+<div id="main-container">
+  <div class="img-container all-sandwiches">
+    <a href="/mysandwich/show">
+      <img src="/static/images/sandwich.jpg">
+      <h3>Browse Sandwiches</h3>
+    </a>
   </div>
-
-  <div id="controls">
-    <div class="column">
-      <p>ingredients overview</p>
-      <div class="content">
-
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-        <button type="submit">Save</button>
-        </form>
-
-      </div>
-    </div>
-    <div class="column">
-      <p>sandwich library</p>
-      <div class="content">
-
-        <table>
-            <tr class="sandwich_header">
-                <th>ID</th>
-                <th>Name</th>
-                <th>Bread</th>
-                <th>Base</th>
-                <th>Cheese</th>
-                <th>Vegetable</th>
-                <th>Condiment</th>
-                <th>Price</th>
-                <th>Upvotes</th>
-                <th>Downvotes</th>
-            </tr>
-
-            {% for sandwich in all_sandwiches %}
-            <tr class="sandwich_row">
-                <td><a href="show/{{ sandwich.id }}">{{ sandwich.id }}</a></td>
-                <td>{{ sandwich.name }}</td>
-                <td>{{ sandwich.bread }}</td>
-                <td>{{ sandwich.base }}</td>
-                <td>{{ sandwich.cheese }}</td>
-                <td>{{ sandwich.vegetable}}</td>
-                <td>{{ sandwich.condiment}}</td>
-                <td>{{ sandwich.price}}</td>
-                <td>{{ sandwich.upvotes}}</td>
-                <td>{{ sandwich.downvotes}}</td>
-            </tr>
-            {% endfor %}
-        </table>
-
-      </div>
-    </div>
+  <div class="img-container create-sandwich">
+    <a href="/mysandwich">
+      <img href="/mysandwich" src="/static/images/bread.jpg">
+      <h3>Create Sandwich</h3>
+    </a>
   </div>
-</div> -->
+  <div class="img-container ingredients">
+    <!-- <a href="{% url 'logout' %}"> -->
+      <img src="/static/images/appetizer.jpg">
+      <h3>Our Ingredients</h3>
+    <!-- </a> -->
+  </div>
+</div>
 
 
 {% endblock %}

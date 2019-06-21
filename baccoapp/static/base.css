@@ -9,28 +9,34 @@ html, body {
   background: #23272a;
 }
 
-/* header {
-  text-align: center;
-  padding: 30px;
-} */
-/* main {
-  background-size: cover;
+h2 {
+  margin-top: 1em;
+}
+.sandwich-container {
+  width: 80%;
+  margin: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+td {
+  padding: 1em;
+  border-bottom: .1em solid #ddd;
+  /* border: .1em solid white; */
+}
 
-  height: 100vh;
+nav
+/* tr:hover {
+  background: grey;
 } */
-h1 {
-  font-size: 2em;
-  margin: 0;
+
+
+
+input, option, button {
+  color:black;
 }
-nav {
-  /* background: #1DB954;
-  vertical-align:middle;
-  text-align: center;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center; */
-}
+
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -40,34 +46,70 @@ nav ul {
   background-color: #1DB954;
 }
 
-li {
+nav li {
   float: left;
   text-align: center;
-  /* padding: 14px 16px; */
 }
 
-li a {
+nav li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 24px 16px;
   text-decoration: none;
+  transition: all ease-in-out .1s;
 }
-li p, li form {
+nav li p, nav li form {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 20px 16px;
   text-decoration: none;
 }
-/* nav > a {
-  padding:.5em;
-  text-decoration: none;
-} */
-nav > h2 {
-  display: inline-block;
+nav li form input {
+  padding-left: 10px;
+  color: black;
+}
+nav li h1:first-of-type {
+  padding: 15px 10px;
+  font-size: 2em;
+}
+nav li p:first-of-type {
+  font-family: cursive;
+  padding: 20px 16px;
+}
+.title {
+  padding: 0 16px;
+}
+.title:hover {
+  background: #1DB954;
 }
 
-a:hover {
+nav a:hover {
   background: grey;
 }
+/* nav > a {
+padding:.5em;
+text-decoration: none;
+} */
+/* nav > h2 {
+display: inline-block;
+} */
+/* header {
+text-align: center;
+padding: 30px;
+}
+main {
+background-size: cover;
+
+height: 100vh;
+}
+nav {
+background: #1DB954;
+vertical-align:middle;
+text-align: center;
+display: flex;
+flex-flow: row nowrap;
+justify-content: center;
+align-items: center;
+} */

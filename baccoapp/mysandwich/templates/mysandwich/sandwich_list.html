@@ -1,32 +1,34 @@
-{% extends "home.html" %}
-{% block title %}All Sandwiches{% endblock title %}
+{% extends "base.html" %}
 {% block content %}
+<!-- <link rel="stylesheet" href="/static/sandwich_list.css"> -->
 
-<h1>All Sandwiches</h1>
-<table>
-    <tr class="sandwich_header">
-        <th>ID</th>
-        <th>Name</th>
-        <th>Ingredients</th>
-        <th>Published</th>
-        <th>Price</th>
+
+<div class="sandwich-container">
+  <h2>All Sandwiches</h2>
+  <table>
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Ingredients</td>
+      <td>Published Date</td>
+      <td>Price</td>
     </tr>
+      {% for sandwich in all_sandwiches %}
+      <tr>
+      <td><a href="show/{{ sandwich.id }}">{{ sandwich.id }}</a></td>
+      <td>{{ sandwich.name }}</td>
+      <td>
+        {% for ingredient in sandwich.ingredients.all %}
+        {{ ingredient.name }},
+        {% endfor %}
+      </td>
+      <td>{{ sandwich.pub_date }}</td>
+      <td>{{ sandwich.price }}€</td>
+      <tr>
+      {% endfor %}
+  </table>
+  <a href="../">Back</a>
+</div>
 
-    {% for sandwich in all_sandwiches %}
-    <tr class="sandwich_row">
-        <td><a href="show/{{ sandwich.id }}">{{ sandwich.id }}</a></td>
-        <td>{{ sandwich.name }}</td>
-        <td>
-          {% for ingredient in all_ingredients %}
-            {{ ingredient.name }},
-          {% endfor %}
-        </td>
-        <td>{{ sandwich.pub_date }}</td>
-        <td>{{ sandwich.price }}</td>
-    </tr>
-    {% endfor %}
-</table>
-
-<p><a href="../">Cancel</a></p>
 
 {% endblock content %}
