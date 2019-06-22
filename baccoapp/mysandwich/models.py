@@ -39,13 +39,13 @@ class Ingredient(models.Model):
 
     price = models.DecimalField(max_digits=3, decimal_places=2, default=0) # max 9,99
 
+    # def get_price(cls):
+    #     return cls.price
+
     def __str__(self):
-        return self.name
-        # return '[' + self.type + '] ' + self.name
-
-
-
-
+        return "%s,%.2f,%s" % (self.name, self.price, self.type)
+    #     # return '[' + self.type + '] ' + self.name
+    #
 
 
 class Sandwich(models.Model):
@@ -56,6 +56,7 @@ class Sandwich(models.Model):
 
 
     price = models.DecimalField(max_digits=4, decimal_places=2, default=0) # max 99,99
+    # price = self.get_price(self) # max 99,99
 
     def __str__(self):
         return self.name
