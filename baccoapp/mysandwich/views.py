@@ -44,17 +44,14 @@ class SearchResultsView(ListView):
         query = self.request.GET.get("q")
         return Sandwich.objects.filter(
             Q(name__icontains = query) |
-            Q(ingredients__name__icontains = query)
+            Q(ingedients__name__icontains = query)
+
         )
-        # Q(name__icontains = query) |
-        # Q(bread__icontains = query) |
-        # Q(base__icontains = query) |
-        # Q(cheese__icontains = query) |
-        # Q(vegetable__icontains = query) |
-        # Q(condiment__icontains = query) |
-        # Q(price__icontains = query) |
-        # Q(upvotes__icontains = query) |
-        # Q(downvotes__icontains = query)
+
+class MySandwich(ListView):
+    model = Sandwich
+
+
 
 def add_sandwich(request):
     if request.method == 'POST':
@@ -65,6 +62,7 @@ def add_sandwich(request):
         form = SandwichForm()
 
     # return render(request, 'sandwiches/sandwich_add.html', {'form': form})
+    # context = IngredientsListView.get_context_data(IngredientsListView.context_object_name)
     return render(request, 'mysandwich/mysandwich.html', {'form': form})
 
 

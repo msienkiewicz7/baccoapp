@@ -1,0 +1,17 @@
+
+.create{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    h1 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    form{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        input,option{
+            color:black;
+        }
+    }
+
+}
