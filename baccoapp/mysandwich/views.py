@@ -43,7 +43,8 @@ class SearchResultsView(ListView):
     def get_queryset(self):
         query = self.request.GET.get("q")
         return Sandwich.objects.filter(
-            Q(name__icontains = query)
+            Q(name__icontains = query) |
+            Q(ingredients__name__icontains = query)
         )
         # Q(name__icontains = query) |
         # Q(bread__icontains = query) |
