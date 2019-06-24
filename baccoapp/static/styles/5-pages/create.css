@@ -5,7 +5,7 @@
       grid-template-columns: repeat(3, 1fr);
 }
 
-.create-wrapper h1, .create-wrapper input[type="text"], .create-wrapper select, .create-wrapper label {
+.create-wrapper h1, .create-wrapper input[type="text"], .create-wrapper select, .create-wrapper label, .create-wrapper button {
   margin: 5%;
 }
 
@@ -31,7 +31,6 @@
 }
 
 .create-wrapper .create #save {
-  margin-top: 20%;
   color: white;
   width: 45%;
   text-align: center;
@@ -42,6 +41,8 @@
   border: none;
   text-transform: uppercase;
   background: green;
+  width: 40%;
+  margin-top: 20%;
   float: left;
 }
 
@@ -50,7 +51,6 @@
 }
 
 .create-wrapper .create #cancel {
-  margin-top: 20%;
   color: white;
   width: 45%;
   text-align: center;
@@ -61,6 +61,8 @@
   border: none;
   text-transform: uppercase;
   background: green;
+  width: 40%;
+  margin-top: 20%;
   float: right;
 }
 

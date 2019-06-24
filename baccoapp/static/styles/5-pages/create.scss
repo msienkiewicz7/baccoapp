@@ -4,7 +4,7 @@
 .create-wrapper{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
-    h1,input[type="text"], select, label{
+    h1,input[type="text"], select, label,button{
         margin:5%;
     }
     .create{
@@ -22,13 +22,15 @@
         height:100vh;
         border-right: 1px solid white;
         #save{
-            margin-top:20%;
             @include submit;
+            width:40%;
+            margin-top:20%;
             float:left;
         }
         #cancel{
-            margin-top:20%;
             @include submit;
+            width:40%;
+            margin-top:20%;
             float:right;
             a{
                 text-decoration: none;
