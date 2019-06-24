@@ -1,29 +1,96 @@
-.create {
+.create-wrapper {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
 }
 
-.create h1 {
+.create-wrapper h1, .create-wrapper input[type="text"], .create-wrapper select, .create-wrapper label {
+  margin: 5%;
+}
+
+.create-wrapper .create {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
   -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
+  grid-row: 1;
+  height: 100vh;
+  border-right: 1px solid white;
 }
 
-.create form {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
-}
-
-.create form input, .create form option {
+.create-wrapper .create input, .create-wrapper .create option {
   color: black;
+}
+
+.create-wrapper .create input[type="text"], .create-wrapper .create select {
+  width: 90%;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.create-wrapper .create #save {
+  margin-top: 20%;
+  color: white;
+  width: 45%;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 14px 16px;
+  border-radius: 3%;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  background: green;
+  float: left;
+}
+
+.create-wrapper .create #save:hover {
+  background: #004d00;
+}
+
+.create-wrapper .create #cancel {
+  margin-top: 20%;
+  color: white;
+  width: 45%;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 14px 16px;
+  border-radius: 3%;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  background: green;
+  float: right;
+}
+
+.create-wrapper .create #cancel:hover {
+  background: #004d00;
+}
+
+.create-wrapper .create #cancel a {
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.create-wrapper .create #id_price {
+  margin-bottom: 5%;
+}
+
+.create-wrapper .preview {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  height: 100vh;
+  border-right: 1px solid white;
+}
+
+.create-wrapper .final {
+  -ms-grid-column: 3;
+  grid-column: 3/3;
+  -ms-grid-row: 1;
+  grid-row: 1;
 }
 /*# sourceMappingURL=create.css.map */

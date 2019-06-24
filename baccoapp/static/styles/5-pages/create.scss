@@ -1,17 +1,53 @@
+@import '../1-abstracts/variables';
+@import '../1-abstracts/mixins';
 
-.create{
+.create-wrapper{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
-    h1 {
-        grid-column: 1/2;
-        grid-row: 1/2;
+    h1,input[type="text"], select, label{
+        margin:5%;
     }
-    form{
+    .create{
         grid-column: 1/2;
-        grid-row: 2/3;
+        grid-row: 1;
         input,option{
             color:black;
         }
+        input[type="text"], select {
+            width: 90%;
+            padding: 12px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        height:100vh;
+        border-right: 1px solid white;
+        #save{
+            margin-top:20%;
+            @include submit;
+            float:left;
+        }
+        #cancel{
+            margin-top:20%;
+            @include submit;
+            float:right;
+            a{
+                text-decoration: none;
+                font-size:1em;
+            }
+        }
+        #id_price{
+            margin-bottom:5%;
+        }
+    }
+    .preview{
+        grid-column: 2/3;
+        grid-row: 1;
+        height:100vh;
+        border-right: 1px solid white;
+    }
+    .final{
+        grid-column: 3/3;
+        grid-row:1;
     }
 
 }
