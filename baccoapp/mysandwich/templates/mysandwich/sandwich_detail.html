@@ -1,5 +1,4 @@
 {% extends "home.html" %}
-<!-- {% block title %}All Sandwiches{% endblock title %} -->
 {% block content %}
 <div class="sandwich-container">
   <h2>Sandwich Detail</h2>
@@ -8,8 +7,14 @@
       <tr><td>Name:</td>         <td>{{ sandwich.name }}</td></tr>
       <tr><td>Ingredients:</td>  <td>
                                     {% for ingredient in sandwich.ingredients.all %}
-                                      {% if ingredient.img_small %}
-                                        <img src="http://localhost:8000/{{ ingredient.img_small }}" alt="">
+
+                                    {% if ingredient.img_large %}
+                                    <img src="http://localhost:8000/{{ ingredient.img_small }}" alt="">
+                                      <!-- {% include "9-grain_wheat_large"} -->
+                                      <!-- <img src="http://localhost:8000/{{ ingredient.large }}" alt=""> -->
+                                    {% endif %}
+                                      {% if ingredient.img_large %}
+                                        <img src="http://localhost:8000/{{ ingredient.img_large }}" alt="">
                                       {% endif %}
                                     {% endfor %}
                                 </td></tr>
