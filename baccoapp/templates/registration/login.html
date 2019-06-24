@@ -1,20 +1,21 @@
 <!-- templates/registration/login.html -->
 {% block content %}
-<link rel="stylesheet" href="/static/styles/main.css">
+<!-- <link rel="stylesheet" href="/static/styles/main.css"> -->
+<link rel="stylesheet" href="/static/styles/login.css">
 
 <div class="login">
-    <img src="/static/images/bread.png">
     <form method="post">
         {% csrf_token %}
+        <img src="/static/images/bread.png">
         <p class="uname">
-            <label for="id_username">Username:</label>
+            <!-- <label for="id_username">Username:</label> -->
             <input type="text" name="username" autofocus="" required="" placeholder="Username" id="id_username">
-            <img src="/static/images/salad.png">
+            <!-- <img src="/static/images/salad.png"> -->
         </p>
         <p class="pw">
-            <label for="id_password">Password:</label>
+            <!-- <label for="id_password">Password:</label> -->
             <input type="password" name="password" required="" placeholder="Password" id="id_password">
-            <img id="tomato" src="/static/images/tomato.png">
+            <!-- <img id="tomato" src="/static/images/tomato.png"> -->
 
         </p>
         <div class="buttons">
@@ -22,8 +23,8 @@
             <button type="submit" id="submit_signup">Sign up</button>
         </div>
 
+        <img src="/static/images/bread2.png">
     </form>
 
-    <img src="/static/images/bread2.png">
 </div>
 {% endblock %}
