@@ -1,0 +1,50 @@
+.title:hover {
+  background: #1DB954;
+}
+
+header {
+  background-color: green;
+  line-height: 3em;
+  display: fixed;
+}
+
+header * {
+  display: inline;
+  padding: 0.5em 0.25em;
+  margin: 0%;
+}
+
+#header-left, #header-right {
+  /* width: 50%; */
+  display: inline-block;
+}
+
+#header-left {
+  float: left;
+}
+
+#header-right {
+  float: right;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header a:hover {
+  background: grey;
+  cursor: pointer;
+}
+
+.title img {
+  height: 2em;
+  /* padding: 0.5em; */
+}
+
+
+
+
+
+
+
+
