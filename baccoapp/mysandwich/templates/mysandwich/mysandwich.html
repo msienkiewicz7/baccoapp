@@ -3,66 +3,71 @@
 
 {% block content %}
 <!-- <link rel="stylesheet" href="/static/mysandwich.css"> -->
+<!-- <link rel="stylesheet" href="/static/styles/main.css"> -->
 <link rel="stylesheet" href="/static/styles/main.css">
+<link rel="stylesheet" href="/static/styles/create.css">
+<link rel="stylesheet" href="/static/styles/preview.css">
+<link rel="stylesheet" href="/static/styles/final.css">
+
 <script defer src="/static/js/mysandwich.js" charset="utf-8"></script>
+
 <div class="create-wrapper">
+
   <div class="create">
-    <h1>New Sandwich</h1>
-  
+    <!-- <h1>New Sandwich</h1> -->
+
     <form method="POST">
       {% csrf_token %}
       <!-- {{ form.as_p }} -->
-  
-      <div class="name-wrapper">
-        <p class="name">
-            <label for="id_name">Name:</label>
-            <input type="text" name="name" maxlength="255" required="" id="id_name">
-        </p>
-      </div>
-  
+
       {% for field in form %}
       <div class="form-wrapper">
         {% if field.id_for_label == "id_ingredients" %}
         {{ field.label_tag }}
-          <select id="ingredients_selector" name="ingredients" required id="id_ingredients" multiple>
-            {% for choice in field.field.choices %}
-              <option value="{{ choice.0 }}" data="{{ choice.1 }}"></option>
-            {% endfor %}
-          </select>
-  
+        <select id="ingredients_selector" name="ingredients" required id="id_ingredients" multiple>
+          {% for choice in field.field.choices %}
+          <option value="{{ choice.0 }}" data="{{ choice.1 }}"></option>
+          {% endfor %}
+        </select>
+
         {% elif field.id_for_label == "id_pub_date" %}
-          {{ field }}
-  
+        {{ field }}
+
         {% endif %}
       </div>
       {% endfor %}
-  
+
       <!-- <p hidden>
-        <label for="id_pub_date">Pub date:</label>
-        <input type="text" name="pub_date" value="2019-06-20 23:40:56" id="id_pub_date">
-      </p> -->
-  
-      <p>
-        <label for="id_price">Price:</label>
-        <input type="number" name="price" value="0" step="0.01" required id="id_price">
-      </p>
-  
-  <hr>
-  
-  
-  
-      <button id="save" type="submit">Save</button>
-    </form>
-    <button id="cancel"><a href="../">Cancel</a></button>
-  
+      <label for="id_pub_date">Pub date:</label>
+      <input type="text" name="pub_date" value="2019-06-20 23:40:56" id="id_pub_date">
+    </p> -->
+
+
+
+    <!-- <button id="save" type="submit">Save</button> -->
+  </form>
+
+</div>
+
+<div class="preview">
+  <!-- <h1>Preview</h1> -->
+</div>
+
+<div class="final">
+  <!-- <h1>Your Sandwich</h1> -->
+  <div class="name-wrapper">
+    <p class="name">
+      <label for="id_name">Name:</label>
+      <input type="text" name="name" maxlength="255" required="" id="id_name">
+    </p>
   </div>
-  <div class="preview">
-    <h1>Preview</h1>
-  </div>
-  <div class="final">
-    <h1>Your Sandwich</h1>
-  </div>
-  {% endblock content %}
+  <p>
+    <label for="id_price">Price:</label>
+    <input type="number" name="price" value="0" step="0.01" required id="id_price">
+  </p>
+  <button id="save" type="submit">Save</button>
+</div>
+{% endblock content %}
 
 </div>
 
