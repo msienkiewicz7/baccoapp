@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <link rel="shortcut icon" href="/static/favicon.ico"/>
   <link rel="stylesheet" href="/static/base.css">
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <title>{% block title %}Bacco{% endblock %}</title>
@@ -22,6 +22,7 @@
     <li> <p>Hi {{ user.username }}!</p> </li>
     <li><a href="/mysandwich">Create new sandwich!</a></li>
     <li><a href="/mysandwich/show">View sandwiches</a></li>
+    <li><a href="/mysandwich/ingredients">Our Ingredients</a></li>
     <li><a href="{% url 'logout' %}">Logout</a></li>
     <li style="float: right">
         <form action="{% url 'search_results' %}" method="get" style="float:right">
