@@ -19,6 +19,8 @@
       <td>{{ sandwich.name }}</td>
       <td>
         {% for ingredient in sandwich.ingredients.all %}
+        <!-- <img src="http://localhost:8000/{{ ingredient.img_small }}" alt=""> -->
+
         {{ ingredient.name }},
         {% endfor %}
       </td>

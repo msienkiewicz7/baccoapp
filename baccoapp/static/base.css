@@ -14,11 +14,12 @@ h2 {
 }
 .sandwich-container {
   width: 80%;
-  margin: auto;
+  margin: auto auto 5em auto;
 }
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 2em;
 }
 td {
   padding: 1em;
@@ -67,7 +68,7 @@ nav li p, nav li form {
   text-decoration: none;
 }
 nav li form input {
-  padding-left: 10px;
+  padding-left: 5px;
   color: black;
 }
 nav li h1:first-of-type {
