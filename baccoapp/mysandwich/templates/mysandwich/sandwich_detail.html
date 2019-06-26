@@ -1,5 +1,6 @@
 {% extends "home.html" %}
 {% block content %}
+<link rel="stylesheet" href="/static/sandwichDetail.css">
 <div class="sandwich-container">
   <h2>Sandwich Detail</h2>
     <table>
@@ -8,15 +9,19 @@
       <tr><td>Ingredients:</td>  <td>
                                     {% for ingredient in sandwich.ingredients.all %}
 
-                                    {% if ingredient.img_large %}
-                                    <img src="http://localhost:8000/{{ ingredient.img_small }}" alt="">
-                                      <!-- {% include "9-grain_wheat_large"} -->
-                                      <!-- <img src="http://localhost:8000/{{ ingredient.large }}" alt=""> -->
-                                    {% endif %}
-                                      {% if ingredient.img_large %}
-                                        <img src="http://localhost:8000/{{ ingredient.img_large }}" alt="">
+                                        {% if '9-Grain' in ingredient.name or 'Italian' in ingredient.name %}
+                                          <img src="http://localhost:8000/{{ ingredient.img_small }}" alt="">
+                                        {% else %}
+                                          <img src="http://localhost:8000/{{ ingredient.img_large }}" alt="">
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    {% for ingredient in sandwich.ingredients.all %}
+                                      {% if '9-Grain' in ingredient.name or 'Italian' in ingredient.name %}
+                                      <img src="http://localhost:8000/{{ ingredient.img_large }}" alt="">
                                       {% endif %}
                                     {% endfor %}
+
                                 </td></tr>
       <tr><td>Published:</td>    <td>{{ sandwich.pub_date }}</td></tr>
       <tr><td>Price:</td>        <td>{{ sandwich.price }}</td></tr>

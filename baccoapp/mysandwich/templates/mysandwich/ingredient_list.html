@@ -1,0 +1,48 @@
+<!-- templates/search_results.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/ingredient.css">
+
+<h2>Ingredients</h2>
+<div class="ingredients-container">
+  <!-- <h3> Bread </h3>
+  <h3> Base </h3>
+  <h3> Cheese </h3>
+  <h3> Vegetable </h3>
+  <h3> Condiment </h3>
+  <h3> Extras </h3> -->
+  {% for ingredient in object_list %}
+    <!-- {% if 'BREAD' in ingredient.type %}
+    <figure class="bread">
+      <img src="http://localhost:8000/{{ ingredient.img_small }}" alt="">
+    {% elif 'BASE' in ingredient.type %}
+    <figure class="base">
+      <img src="http://localhost:8000/{{ ingredient.img_small }}" alt="">
+    {% elif 'CHEESE' in ingredient.type %}
+    <figure class="cheese">
+      <img src="http://localhost:8000/{{ ingredient.img_small }}" alt="">
+    {% elif 'VEGETABLE' in ingredient.type %}
+    <figure class="vegetable">
+      <img src="http://localhost:8000/{{ ingredient.img_small }}" alt="">
+    {% elif 'CONDIMENT' in ingredient.type %}
+    <figure class="condiment">
+      <img src="http://localhost:8000/{{ ingredient.img_small }}" alt="">
+    {% elif 'EXTRAS' in ingredient.type %}
+    <figure class="extras">      <img src="http://localhost:8000/{{ ingredient.img_small }}" alt="">
+    {% endif %} -->
+    <figure>
+      <img src="http://localhost:8000/{{ ingredient.img_small }}" alt="">
+
+    <figcaption class="overlay">{{ ingredient.name }}</figcaption>
+    <p>
+    Calories: {{ ingredient.calories }},
+    Vegetarian: {{ ingredient.is_vegetarian }},
+    Vegan: {{ ingredient.is_vegan }},
+    Price: {{ ingredient.price }}</p>
+  </figure>
+  {% endfor %}
+<p><a href="/">Back to Homepage</a></p>
+</div>
+<a href="../">Back</a>
+{% endblock content %}
