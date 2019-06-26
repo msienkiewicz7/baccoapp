@@ -1,7 +1,12 @@
-.preview {
+/* .preview {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
   -ms-grid-row: 1;
   grid-row: 1;
+} */
+
+.preview {
+  float: left;
+  width: 33.33%;
 }

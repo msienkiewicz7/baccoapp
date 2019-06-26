@@ -1,8 +1,13 @@
-.final {
+/* .final {
   -ms-grid-column: 3;
   grid-column: 3/3;
   -ms-grid-row: 1;
   grid-row: 1;
   height: calc(100vh - 2em);
   background-color: white;
+} */
+
+.final {
+  float: right;
+  width: 33.33%;
 }

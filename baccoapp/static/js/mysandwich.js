@@ -20,17 +20,17 @@ $(document).ready(function() {
 
     option.css("background-image", `url(/${img_small})`)
     // option.css("background-size", "5%")
-    console.log(img_small);
+    // console.log(img_small);
   });
 
-  $("#ingredients_selector").on("change", function(event) {
+  $("#id_ingredients").on("change", function(event) {
 
     let price = 0;
     let selection = $(this).find(":selected");
     selection.each(function(){
       price += Number($(this).attr("price"));
     });
-    // console.log(price);
+    console.log(price);
 
     $("#id_price").attr("value", price)
 

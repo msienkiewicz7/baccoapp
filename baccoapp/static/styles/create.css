@@ -2,13 +2,18 @@
   display: none;
 }
 
-.create {
+/* .create {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
   -ms-grid-row: 1;
   grid-row: 1;
   height: 100vh;
+} */
+
+.create {
+  float: left;
+  width: 100%;
 }
 
 .create select {
@@ -36,7 +41,6 @@
   background-size: 40%;
 
   padding-top: 10%;
-
 }
 
 /* #id_ingredients option[value="1"] {

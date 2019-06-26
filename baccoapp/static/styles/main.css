@@ -12,3 +12,10 @@
   grid-template-columns: repeat(3, 1fr);
   height: 100%;
 }
+
+/* Clear floats after the columns */
+.create-wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
