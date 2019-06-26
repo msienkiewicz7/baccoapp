@@ -24,7 +24,7 @@
       <div class="form-wrapper">
         {% if field.id_for_label == "id_ingredients" %}
         {{ field.label_tag }}
-        <select id="ingredients_selector" name="ingredients" required id="id_ingredients" multiple>
+        <select name="ingredients" required id="id_ingredients" multiple>
           {% for choice in field.field.choices %}
           <option value="{{ choice.0 }}" data="{{ choice.1 }}"></option>
           {% endfor %}
@@ -47,7 +47,10 @@
     <!-- <button id="save" type="submit">Save</button> -->
   </form>
 
+
+
 </div>
+
 
 <div class="preview">
   <!-- <h1>Preview</h1> -->
@@ -67,7 +70,7 @@
   </p>
   <button id="save" type="submit">Save</button>
 </div>
+
 {% endblock content %}
 
 </div>
-

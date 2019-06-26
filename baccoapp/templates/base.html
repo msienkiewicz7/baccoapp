@@ -33,6 +33,23 @@
   </div>
 </header>
 
+<nav>
+  {% if user.is_authenticated %}
+  <ul>
+    <li> <a class="title" href="/"><h1>BACCO.</h1></a> </li>
+    <li> <p>Hi {{ user.username }}!</p> </li>
+    <li><a href="/mysandwich">Create new sandwich!</a></li>
+    <li><a href="/mysandwich/show">View sandwiches</a></li>
+    <li><a href="/mysandwich/ingredients">Our Ingredients</a></li>
+    <li><a href="{% url 'logout' %}">Logout</a></li>
+    <li style="float: right">
+        <form action="{% url 'search_results' %}" method="get" style="float:right">
+          <input name="q" type="text" placeholder="search sandwich, ingredient">
+        </form>
+    </li>
+  </ul>
+
+</nav>
 <body>
   <main>
     {% block content %}

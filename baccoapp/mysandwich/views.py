@@ -44,9 +44,9 @@ class SearchResultsView(ListView):
         query = self.request.GET.get("q")
         return Sandwich.objects.filter(
             Q(name__icontains = query) |
-            Q(ingedients__name__icontains = query)
+            Q(ingredients__name__icontains = query)
 
-        )
+        ).distinct()
 
 class MySandwich(ListView):
     model = Sandwich
@@ -72,5 +72,5 @@ class IngredientsListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(IngredientsListView, self).get_context_data(**kwargs)
-        context['ingredients_list'] = Ingredient.objects.all()
+        context['ingredient_list'] = Ingredient.objects.all()
         return context

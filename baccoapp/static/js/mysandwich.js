@@ -1,22 +1,32 @@
 $(document).ready(function() {
 
-  $("#ingredients_selector option").each(function() {
+  console.log("jQuery execution")
 
-    var option = $(this)
-    var data = option.attr("data").split(",")
-    var ingredient_name = data[0]
-    var ingredient_price = data[1]
-    var ingredient_type = data[2]
+  $("#id_ingredients option").each(function() {
+
+    let option = $(this)
+    let data = option.attr("data").split(",")
+    let ingredient_name = data[0]
+    let ingredient_price = data[1]
+    let ingredient_type = data[2]
+    let img_small = data[3]
+    let img_large = data[4]
+
     option.html(ingredient_name)
     option.attr("price", ingredient_price)
     option.attr("type", ingredient_type)
-    // console.log(option.attr("data"));
+    option.attr("img_small", img_small)
+    option.attr("img_large", img_large)
+
+    option.css("background-image", `url(/${img_small})`)
+    // option.css("background-size", "5%")
+    console.log(img_small);
   });
 
   $("#ingredients_selector").on("change", function(event) {
 
-    var price = 0;
-    var selection = $(this).find(":selected");
+    let price = 0;
+    let selection = $(this).find(":selected");
     selection.each(function(){
       price += Number($(this).attr("price"));
     });
@@ -25,6 +35,8 @@ $(document).ready(function() {
     $("#id_price").attr("value", price)
 
   });
+
+
 
   $("#id_pub_date").attr("hidden", true)
   $("#id_price").attr("readonly", true)
