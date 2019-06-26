@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
-  $("#ingredients_selector option").each(function() {
+  console.log("jQuery execution")
+
+  $("#id_ingredients option").each(function() {
 
     let option = $(this)
     let data = option.attr("data").split(",")
@@ -13,10 +15,11 @@ $(document).ready(function() {
     option.html(ingredient_name)
     option.attr("price", ingredient_price)
     option.attr("type", ingredient_type)
-    // option.attr("img_small", img_small)
-    // option.attr("img_large", img_large)
+    option.attr("img_small", img_small)
+    option.attr("img_large", img_large)
 
-    // option.css("background-image", `url(${img_small})`)
+    option.css("background-image", `url(/${img_small})`)
+    // option.css("background-size", "5%")
     console.log(img_small);
   });
 

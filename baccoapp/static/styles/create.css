@@ -14,12 +14,36 @@
 .create select {
   /* height: calc(100vh); */
   width: 100%;
+  height: 600px;
 }
 
 .create select option {
   font-weight: bold;
+  font-size: 12pt;
 }
 
 .create select option:nth-child(even) {
   background-color: #e0e0e0;
 }
+
+/* Sandwich creator (select) */
+
+#id_ingredients option {
+  padding-left: 45%;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 40%;
+
+  padding-top: 10%;
+
+}
+
+/* #id_ingredients option[value="1"] {
+  background-size: 10%;
+  background-image: url(/static/images/ingredients/small/pepperoni_small.png);
+}
+#id_ingredients option[value="2"] {
+  background-size: 10%;
+  background-image: url(/static/images/ingredients/small/cheddar_small.png);
+} */
