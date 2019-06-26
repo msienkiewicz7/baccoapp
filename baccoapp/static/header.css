@@ -4,27 +4,15 @@
 
 header {
   background-color: green;
+  height: 3em;
   line-height: 3em;
-  display: fixed;
-}
-
-header * {
-  display: inline;
-  padding: 0.5em 0.25em;
-  margin: 0%;
-}
-
-#header-left, #header-right {
-  /* width: 50%; */
   display: inline-block;
+  width: 100%;
+  align-items: center;
 }
 
-#header-left {
-  float: left;
-}
-
-#header-right {
-  float: right;
+header div {
+  line-height: 3em;
 }
 
 header a {
@@ -32,16 +20,46 @@ header a {
 }
 
 header a:hover {
-  background: grey;
   cursor: pointer;
 }
 
-.title img {
-  height: 2em;
-  /* padding: 0.5em; */
+#header-left, #header-right {
+
 }
 
+#header-left {
+  float: left;
+  padding-left: 1em;
+}
 
+#header-left * {
+  padding-left: 0.5em;
+}
+
+#header-right {
+  float: right;
+  padding-right: 1em;
+}
+
+#header-right * {
+  padding-right: 0.5em;
+}
+
+#logo img {
+  width: 2.5em;
+  padding-left: 0;
+  padding-right: 0.25em;
+  object-fit: cover;
+  padding-top: 1em;
+}
+
+header form, header p {
+  display: inline;
+}
+
+header img {
+  /* padding: 1em 0; */
+}
 
 
 

@@ -1,26 +1,46 @@
 {% extends "home.html" %}
+
+{% load static %}
+<link rel="stylesheet" href="/static/header.css">
+
 {% block content %}
+
 <div class="sandwich-container">
   <h2>Sandwich Detail</h2>
-    <table>
-      <tr><td>ID:</td>           <td>{{ sandwich.id }}</td></tr>
-      <tr><td>Name:</td>         <td>{{ sandwich.name }}</td></tr>
-      <tr><td>Ingredients:</td>  <td>
-                                    {% for ingredient in sandwich.ingredients.all %}
+  <table>
+    <tr>
+      <td>ID:</td>
+      <td>{{ sandwich.id }}</td>
+    </tr>
+    <tr>
+      <td>Name:</td>
+      <td>{{ sandwich.name }}</td>
+    </tr>
+    <tr>
+      <td>Ingredients:</td>
+      <td>
+        {% for ingredient in sandwich.ingredients.all %}
 
-                                    {% if ingredient.img_large %}
-                                    <img src="http://localhost:8000/{{ ingredient.img_small }}" alt="">
-                                      <!-- {% include "9-grain_wheat_large"} -->
-                                      <!-- <img src="http://localhost:8000/{{ ingredient.large }}" alt=""> -->
-                                    {% endif %}
-                                      {% if ingredient.img_large %}
-                                        <img src="http://localhost:8000/{{ ingredient.img_large }}" alt="">
-                                      {% endif %}
-                                    {% endfor %}
-                                </td></tr>
-      <tr><td>Published:</td>    <td>{{ sandwich.pub_date }}</td></tr>
-      <tr><td>Price:</td>        <td>{{ sandwich.price }}</td></tr>
-    </table>
+        {% if ingredient.img_large %}
+        <img src="http://localhost:8000/{{ ingredient.img_small }}" alt="">
+        <!-- {% include "9-grain_wheat_large"} -->
+        <!-- <img src="http://localhost:8000/{{ ingredient.large }}" alt=""> -->
+        {% endif %}
+        {% if ingredient.img_large %}
+        <img src="http://localhost:8000/{{ ingredient.img_large }}" alt="">
+        {% endif %}
+        {% endfor %}
+      </td>
+    </tr>
+    <tr>
+      <td>Published:</td>
+      <td>{{ sandwich.pub_date }}</td>
+    </tr>
+    <tr>
+      <td>Price:</td>
+      <td>{{ sandwich.price }}</td>
+    </tr>
+  </table>
   <a href="../show">Back to sandwich list</a>
 </div>
 {% endblock content %}

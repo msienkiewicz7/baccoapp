@@ -5,32 +5,34 @@
 <head>
   <meta charset="utf-8">
   <link rel="shortcut icon" href="/static/favicon.ico"/>
-  <link rel="stylesheet" href="/static/base.css">
-  
+  <link rel="stylesheet" href="/static/base2.css">
+  <link rel="stylesheet" href="/static/header.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <title>{% block title %}Bacco{% endblock %}</title>
 </head>
 
 <header>
+  {% if user.is_authenticated %}
+  <div id="header-left">
+    <a id="logo" href="/">
+      <!-- <h1>BACCO.</h1> -->
+      <img src="/static/images/logo.png" alt="bacco">
+    </a>
+    <a href="/mysandwich">New</a>
+    <a href="/mysandwich/show">Browse</a>
+    <form action="{% url 'search_results' %}" method="get">
+      <input name="q" type="text" placeholder="Search">
+    </form>
+  </div>
+
+  <div id="header-right">
+    <a href="{% url 'logout' %}">Logout</a>
+    <p>{{ user.username }}</p>
+  </div>
 </header>
 
-<nav>
-  {% if user.is_authenticated %}
-  <ul>
-    <li> <a class="title" href="/"><h1>BACCO.</h1></a> </li>
-    <li> <p>Hi {{ user.username }}!</p> </li>
-    <li><a href="/mysandwich">Create new sandwich!</a></li>
-    <li><a href="/mysandwich/show">View sandwiches</a></li>
-    <li><a href="{% url 'logout' %}">Logout</a></li>
-    <li style="float: right">
-        <form action="{% url 'search_results' %}" method="get" style="float:right">
-          <input name="q" type="text" placeholder="search sandwich, ingredient">
-        </form>
-    </li>
-  </ul>
-
-</nav>
 <body>
   <main>
     {% block content %}
