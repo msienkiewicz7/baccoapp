@@ -53,16 +53,35 @@ class MySandwich(ListView):
 
 
 
+# def add_sandwich(request):
+#     if request.method == 'POST':
+#         form = SandwichForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#     else:
+#         form = SandwichForm()
+#
+#     # return render(request, 'sandwiches/sandwich_add.html', {'form': form})
+#     # context = IngredientsListView.get_context_data(IngredientsListView.context_object_name)
+#     return render(request, 'mysandwich/mysandwich.html', {'form': form})
+
+
 def add_sandwich(request):
     if request.method == 'POST':
         form = SandwichForm(request.POST)
         if form.is_valid():
-            form.save()
+            name = form.cleaned_data['name']
+            price = form.cleaned_data['price']
+            ingredients = form.data['all_selected_ingredient_ids'] # When I used cleaned_data, the string is omitted
+            ingredient_ids = ingredients.split(',')
+            sandwich = Sandwich(name = name, price = price)
+            sandwich.save() # Must save once first, otherwise cannot add ingredients
+            for ingredient_id in ingredient_ids:
+                sandwich.ingredients.add(Ingredient.objects.get(id=ingredient_id))
+            sandwich.save() # Save again with all the ingredients
     else:
         form = SandwichForm()
 
-    # return render(request, 'sandwiches/sandwich_add.html', {'form': form})
-    # context = IngredientsListView.get_context_data(IngredientsListView.context_object_name)
     return render(request, 'mysandwich/mysandwich.html', {'form': form})
 
 

@@ -18,29 +18,25 @@
 
     <form method="POST">
       {% csrf_token %}
-      <!-- {{ form.as_p }} -->
 
-      {% for field in form %}
+
       <div class="form-wrapper">
-        {% if field.id_for_label == "id_ingredients" %}
-        {{ field.label_tag }}
+
         <select name="ingredients" required id="id_ingredients" multiple>
-          {% for choice in field.field.choices %}
-          <option value="{{ choice.0 }}" data="{{ choice.1 }}"></option>
+          {% for value, label, ingredient in form.ingredients.field.choices %}
+            <option style="background-image:url(/{{ ingredient.img_small }})" price="{{ ingredient.price }}" value="{{ ingredient.id }}">{{ ingredient.name }}</option>
           {% endfor %}
         </select>
+        <input hidden type="text" name="all_selected_ingredient_ids" required id="id_all_selected_ingredient_ids">
 
-        {% elif field.id_for_label == "id_pub_date" %}
-        {{ field }}
 
-        {% endif %}
       </div>
-      {% endfor %}
 
-      <!-- <p hidden>
-      <label for="id_pub_date">Pub date:</label>
-      <input type="text" name="pub_date" value="2019-06-20 23:40:56" id="id_pub_date">
-    </p> -->
+
+      <p hidden>
+        <label for="id_pub_date">Pub date:</label>
+        <input type="text" name="pub_date" value="" id="id_pub_date">
+      </p>
 
 
 

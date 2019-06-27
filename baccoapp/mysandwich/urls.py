@@ -8,8 +8,6 @@ from .views import IngredientsListView
 # from . import views
 
 urlpatterns = [
-    # path('', views.index, name='index'),
-    # path('', create_sandwich, name='create-sandwich'),
     path('', add_sandwich, name='sandwich-add'),
     path('show', SandwichListView.as_view(), name='all-sandwiches'),
     path('show/<int:pk>', SandwichDetailView.as_view(), name='sandwich'),
