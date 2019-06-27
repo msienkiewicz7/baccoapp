@@ -2,10 +2,11 @@
     padding:0;
     margin:0;
     box-sizing:border-box;
+    font-family: sans-serif;
 }
 
 .form{
-    margin-top:2%;
+    /* margin-top:2%; */
     float:left;
     width:50%;
 }
@@ -22,7 +23,6 @@ h2{
     margin-left: 2%;
     padding:2%;
     margin-top:5%;
-    font-family:Lora;
     font-size:3em;
 }
 
@@ -66,4 +66,12 @@ img {
     height: 90vh;
     object-fit: contain;
     float: right;
+}
+
+label{
+  font-weight: bold;
+}
+
+ul>li{
+  list-style: none;
 }

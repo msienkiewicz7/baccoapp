@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color: white;
+  color: black;
   font-size: 16px;
 }
 
@@ -12,9 +12,10 @@
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto auto;
 }
 .img-container {
+  hieght: 100%;
   position: relative;
   overflow: hidden;
   /* border: .5px solid white; */
@@ -33,7 +34,7 @@
 }
 img {
   object-fit: cover;
-  height: 250px;
+  height: 280px;
   width: 100%;
   transition: all ease-in-out .2s;
 
@@ -42,6 +43,7 @@ img {
     width:105%;
 }
 h3 {
+  color: white;
   padding: .5em;
   background: rgb(0,0,0,0.4);
   position: absolute;

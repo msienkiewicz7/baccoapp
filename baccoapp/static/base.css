@@ -1,10 +1,22 @@
-color: white;
-font-size: 16px;
+* {
+  color: black;
+  font-size: 16px;
+  font-family: sans-serif;
 }
 
 html, body {
-  background: #23272a;
+  background: white;
+  /* background: #23272a; */
+  padding: 0;
+  margin: 0;
 }
+
+nav h1 {
+  color: white;
+  margin: 0;
+  /* padding: 1em; */
+}
+
 h2 {
   margin-top: 1em;
 }
@@ -23,15 +35,9 @@ table {
 td {
   padding: 1em;
   border-bottom: .1em solid #ddd;
+  border: .1px solid black;
   /* border: .1em solid white; */
 }
-
-nav
-/* tr:hover {
-background: grey;
-} */
-
-
 
 input, option, button {
   color:black;
@@ -77,12 +83,16 @@ nav li h1:first-of-type {
 nav li p:first-of-type {
   font-family: cursive;
   padding: 20px 16px;
+  margin: 0;
 }
 .title {
   padding: 0 16px;
+  /* overflow: hidden;
+  transition: all ease-in-out 1s; */
 }
 .title:hover {
   background: #1DB954;
+  /* width: 101%; */
 }
 
 nav a:hover {
