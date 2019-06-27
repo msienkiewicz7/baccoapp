@@ -11,9 +11,11 @@
   height: 100vh;
 } */
 
+/* .create is an column */
 .create {
   float: left;
-  width: 100%;
+  width: 33.33%;
+  padding: 10px;
 }
 
 .create select {
@@ -27,15 +29,15 @@
   font-size: 12pt;
 }
 
-.create select option:nth-child(even) {
+/* .create select option:nth-child(even) {
   background-color: #e0e0e0;
-}
+} */
 
 /* Sandwich creator (select) */
 
 #id_ingredients option {
   padding-left: 45%;
-  height: 100px;
+  height: 50px;
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 40%;
@@ -43,11 +45,23 @@
   padding-top: 10%;
 }
 
-/* #id_ingredients option[value="1"] {
-  background-size: 10%;
-  background-image: url(/static/images/ingredients/small/pepperoni_small.png);
+#id_ingredients option:checked {
+  font-size: 15pt;
+  background-color: green;
+  appearance: none;
 }
-#id_ingredients option[value="2"] {
-  background-size: 10%;
-  background-image: url(/static/images/ingredients/small/cheddar_small.png);
+
+/* make it red instead (with with same width and style) */
+#id_ingredients{
+  outline: none;
+  -webkit-appearance:none;
+ /* outline: none; */
+}
+
+
+/* IE9  - Also picked up by most modern browsers */
+/* ::selection {
+  background:#AC2937;
+  color:#FFF;
+  text-shadow:none;
 } */

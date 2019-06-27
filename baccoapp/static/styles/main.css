@@ -1,16 +1,16 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+  /* -webkit-box-sizing: border-box; */
 }
 
 .create-wrapper {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
+  /* display: grid;
   grid-template-columns: repeat(3, 1fr);
-  height: 100%;
+  height: 100%; */
+  box-sizing: border-box;
+  text-align: center;
+
 }
 
 /* Clear floats after the columns */

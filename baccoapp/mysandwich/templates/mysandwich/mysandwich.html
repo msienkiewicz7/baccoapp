@@ -12,61 +12,56 @@
 <script defer src="/static/js/mysandwich.js" charset="utf-8"></script>
 
 <div class="create-wrapper">
+  <form method="POST">
 
   <div class="create">
-    <!-- <h1>New Sandwich</h1> -->
+    <h1>Choose your ingredients</h1>
 
-    <form method="POST">
       {% csrf_token %}
 
-
       <div class="form-wrapper">
-
         <select name="ingredients" required id="id_ingredients" multiple>
           {% for value, label, ingredient in form.ingredients.field.choices %}
-            <option style="background-image:url(/{{ ingredient.img_small }})" price="{{ ingredient.price }}" value="{{ ingredient.id }}">{{ ingredient.name }}</option>
+            <option style="background-image:url(/{{ ingredient.img_small }})" img_small="/{{ ingredient.img_small }}" img_large="/{{ ingredient.img_large }}" type="{{ ingredient.type }}" price="{{ ingredient.price }}" value="{{ ingredient.id }}">{{ ingredient.name }}</option>
           {% endfor %}
         </select>
         <input hidden type="text" name="all_selected_ingredient_ids" required id="id_all_selected_ingredient_ids">
-
-
       </div>
-
 
       <p hidden>
         <label for="id_pub_date">Pub date:</label>
         <input type="text" name="pub_date" value="" id="id_pub_date">
       </p>
+  </div>
 
+  <div class="preview">
+    <h1>Preview</h1>
+    <div class="sandwich_images">
 
-
-    <!-- <button id="save" type="submit">Save</button> -->
-    <div class="preview">
-      <!-- <h1>Preview</h1> -->
     </div>
+  </div>
 
-    <div class="final">
-      <!-- <h1>Your Sandwich</h1> -->
-      <div class="name-wrapper">
-        <p class="name">
-          <label for="id_name">Name:</label>
-          <input type="text" name="name" maxlength="255" required="" id="id_name">
-        </p>
-      </div>
-      <p>
-        <label for="id_price">Price:</label>
-        <input type="number" name="price" value="0" step="0.01" required id="id_price">
+  <div class="final">
+    <h1>Your Sandwich</h1>
+    <div class="name-wrapper">
+      <p class="name">
+        <label for="id_name">Name:</label>
+        <input type="text" name="name" maxlength="255" required="" id="id_name">
       </p>
-      <button id="save" type="submit">Save</button>
     </div>
+    <p>
+      <label for="id_price">Price:</label>
+      <input type="number" name="price" value="0" step="0.01" required id="id_price">
+    </p>
+    <button id="save" type="submit">Save</button>
+    <button id="reset" type="button" name="button" onclick="location.href=''">Reset</button>
+  </div>
+
+
   </form>
 
 
-
 </div>
-
 
 
 {% endblock content %}
-
-</div>
