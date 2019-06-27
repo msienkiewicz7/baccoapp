@@ -106,6 +106,46 @@ $(document).ready(function() {
         img = $("<img></img>").attr("src", bottom_bread_src);
         $(".sandwich_images").append(img);
       }
+
+// Update final sandwich informations
+      $(".sandwich_infos p").remove();
+      selection.each(function(){
+        let ingr_type = $(this).attr("type");
+        let ingr_name = $(this).html();
+        let ingr_price = $(this).attr("price");
+        let p = $("<p></p>").html(ingr_name + " " +  ingr_price + "€");
+        $(".info_" + ingr_type.toLowerCase()).append(p);
+      });
+
+// Update vegan img
+
+      $("#vegan").hide();
+
+      let is_vegan = true;
+      selection.each(function(){
+        let ingr_is_vegan = $(this).attr("is_vegan").toLowerCase();
+        ingr_is_vegan = (ingr_is_vegan == 'true');
+
+        if (!ingr_is_vegan) {
+          is_vegan = false;
+        }
+      });
+      // console.log(is_vegan);
+      if (is_vegan) {
+        $("#vegan").show();
+      }
+
+// Update calories
+
+      let calo_sum = 0;
+      selection.each(function(){
+        let ingr_calo = Number($(this).attr("calories"));
+        calo_sum += ingr_calo;
+
+      });
+
+      $("#calories").html(calo_sum + " calories")
+
   });
 
   $("#reset").click(function(){

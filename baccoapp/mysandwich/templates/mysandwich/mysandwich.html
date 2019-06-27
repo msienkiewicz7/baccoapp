@@ -22,7 +22,7 @@
       <div class="form-wrapper">
         <select name="ingredients" required id="id_ingredients" multiple>
           {% for value, label, ingredient in form.ingredients.field.choices %}
-            <option style="background-image:url(/{{ ingredient.img_small }})" img_small="/{{ ingredient.img_small }}" img_large="/{{ ingredient.img_large }}" type="{{ ingredient.type }}" price="{{ ingredient.price }}" value="{{ ingredient.id }}">{{ ingredient.name }}</option>
+            <option style="background-image:url(/{{ ingredient.img_small }})" calories="{{ ingredient.calories }}" is_vegan="{{ ingredient.is_vegan }}" img_small="/{{ ingredient.img_small }}" img_large="/{{ ingredient.img_large }}" type="{{ ingredient.type }}" price="{{ ingredient.price }}" value="{{ ingredient.id }}">{{ ingredient.name }}</option>
           {% endfor %}
         </select>
         <input hidden type="text" name="all_selected_ingredient_ids" required id="id_all_selected_ingredient_ids">
@@ -43,18 +43,51 @@
 
   <div class="final">
     <h1>Your Sandwich</h1>
-    <div class="name-wrapper">
-      <p class="name">
-        <label for="id_name">Name:</label>
-        <input type="text" name="name" maxlength="255" required="" id="id_name">
-      </p>
+    <div class="sandwich_infos">
+      <div class="info_ingredients">
+        <h3>Ingredients</h4>
+        <h4>Bread</h4>
+        <div class="info_bread"></div>
+
+        <h4>Bases</h4>
+        <div class="info_base"></div>
+
+        <h4>Cheese</h4>
+        <div class="info_cheese"></div>
+
+        <h4>Vegetables</h4>
+        <div class="info_vegetable"></div>
+
+        <h4>Condiments</h4>
+        <div class="info_condiment"></div>
+
+        <h4>Extras</h4>
+        <div class="info_extras"></div>
+
+
+      </div>
+
     </div>
-    <p>
-      <label for="id_price">Price:</label>
-      <input type="number" name="price" value="0" step="0.01" required id="id_price">
-    </p>
-    <button id="save" type="submit">Save</button>
-    <button id="reset" type="button" name="button" onclick="location.href=''">Reset</button>
+
+    <hr>
+    <div class="rest">
+      <p id="calories"></p>
+      <img id="vegan" src="/static/images/vegan_symbol.png" alt="">
+
+      <div class="name-wrapper">
+        <p class="name">
+          <label for="id_name">Name:</label>
+          <input type="text" name="name" maxlength="255" required="" id="id_name">
+        </p>
+      </div>
+      <p>
+        <label for="id_price">Price:</label>
+        <input type="number" name="price" value="0" step="0.01" required id="id_price">
+      </p>
+      <button id="save" type="submit">Save</button>
+      <button id="reset" type="button" name="button" onclick="location.href=''">Reset</button>
+
+    </div>
   </div>
 
 

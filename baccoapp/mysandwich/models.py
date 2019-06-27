@@ -43,8 +43,7 @@ class Ingredient(models.Model):
     #     return cls.price
 
     def __str__(self):
-        return "%s,%.2f,%s,%s,%s" % (self.name, self.price, self.type, self.img_small, self.img_large)
-    #     # return '[' + self.type + '] ' + self.name
+        return self.name
     #
 
 

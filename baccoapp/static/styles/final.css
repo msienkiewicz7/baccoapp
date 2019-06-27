@@ -17,3 +17,16 @@
   /* width: 33.33%; */
   padding: 10px;
 }
+
+.sandwich_infos {
+  text-align: left;
+  height: auto;
+}
+
+.sandwich_infos div {
+  /* height: 50px; */
+}
+
+#vegan {
+  width: 50px;
+}
