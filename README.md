@@ -1,4 +1,6 @@
 # <empty> ? BaccoBois / SnaxBois / BaccoApp
+### Screenshot(s)
+<img width="1237" alt="creator_small" src="https://user-images.githubusercontent.com/44209013/127042650-13cf6295-7c0b-4984-992d-01214722e4f8.png">
 
 ### Mitglieder:
 
